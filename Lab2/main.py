@@ -19,4 +19,16 @@ def fib(number):
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
-    print(fib(10));
+    exercitiu = 0
+    while exercitiu!=-99 :
+        exercitiu = int(input("Alege un exercitiu"))
+
+        if exercitiu==1:
+            number = int(input("numar >"))
+            print(fib(10))
+        elif exercitiu==2:
+            print("finish")
+        else:
+            print("done")
+
+
