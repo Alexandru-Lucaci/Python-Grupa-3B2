@@ -106,7 +106,7 @@ def isPalindrom(x):
         number = number*10+copy%10
         copy//=10
 
-    print(x," si ", number)
+    # print(x," si ", number)
     if(number==x):
         return True
     else:
@@ -114,7 +114,8 @@ def isPalindrom(x):
 def ex7(list_of_numbers):
     # print(type(list_of_numbers)
     list_of_numbers= list(filter(lambda element: isPalindrom(element),list_of_numbers))
-    print(list_of_numbers)
+    # print(list_of_numbers)
+    return (list_of_numbers[0],max(list_of_numbers))
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
@@ -136,7 +137,8 @@ if __name__ == '__main__':
         elif exercitiu==6:
             print(ex6([1,2,3],[2,3,4],[4,5,6],x=2))
         elif exercitiu==7:
-            ex7([11211,2,3])
+            (rez1,rez2)=ex7([11211,2,3])
+            print(rez1,"si",rez2)
 
 
 
