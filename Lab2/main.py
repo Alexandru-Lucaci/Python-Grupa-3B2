@@ -25,7 +25,14 @@ def isPrime(number):
             return False
     return True
 
-print(isPrime(11))
+# print(isPrime(11))
+def ex2(list):
+    returnedList = []
+    for i in list:
+        if(isPrime(i)):
+            returnedList+= i
+    return returnedList
+
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0
@@ -34,9 +41,9 @@ if __name__ == '__main__':
 
         if exercitiu==1:
             number = int(input("numar >"))
-            print(fib(10))
+            print(fib(number))
         elif exercitiu==2:
-            print("finish")
+            print(ex2([1,2,3,4,5,6,7,8]))
         else:
             print("done")
 
