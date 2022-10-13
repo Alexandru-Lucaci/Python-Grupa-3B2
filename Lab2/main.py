@@ -84,6 +84,21 @@ def ex5(matrix):
             if i>j :
                 matrix[i][j]=0;
     return matrix
+def ex6(*list, x):
+    newList=[]
+    for i in list:
+        newList.extend(i)
+
+    # print(newList)
+    returnList=[]
+
+    for i in newList:
+        if newList.count(i) == x:
+            returnList.append(i)
+            newList.remove(i)
+    # print(returnList)
+    return returnList
+
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
@@ -102,6 +117,8 @@ if __name__ == '__main__':
         elif exercitiu==5:
             a=[[1,2,3], [2,3,4],[4,5,6]]
             print(ex5(a))
+        elif exercitiu==6:
+            print(ex6([1,2,3],[2,3,4],[4,5,6],x=2))
 
 
 
