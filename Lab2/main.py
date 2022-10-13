@@ -142,7 +142,19 @@ def ex9(matrix):
                 break
     print(result)
 
-
+def ex10(*list):
+    maxLength = max([len(x) for x in list])
+    print(maxLength)
+    returnList =[]
+    for i in range(0,maxLength):
+        result = []
+        for j in list:
+            if(len(j)>i):
+                result.append(j[i])
+            else:
+                result.append(None)
+        returnList.append(result)
+    print(returnList)
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0
@@ -170,11 +182,10 @@ if __name__ == '__main__':
         elif exercitiu==9:
             print(ex9([[1, 2, 3, 2, 1, 1],
                         [2, 4, 4, 3, 7, 2],
-
                         [5, 5, 2, 5, 6, 4],
-
                         [6, 6, 7, 6, 7, 5]] ))
-
+        elif exercitiu==10:
+            ex10([1,2,3], [5,6,7], ["a", "b", "c","D"])
 
 
 
