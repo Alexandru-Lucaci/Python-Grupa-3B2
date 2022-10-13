@@ -157,12 +157,10 @@ def ex10(*list):
     print(returnList)
 
 def ex11(list_tuples):
-    if(len(list_tuples[1][1])<3):
-        print(len(list_tuples[1]))
-        return None
+
     for i in list_tuples:
         if (len(i[1]) < 3):
-            print(len(list_tuples[1]))
+            print("problema apare la",i,',',i[1],', are doar ',len(list_tuples[1]),' elemente')
             return None
 
     listSorted = sorted(list_tuples, key=lambda element: element[1][2])
