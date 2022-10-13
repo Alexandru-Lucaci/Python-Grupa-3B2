@@ -165,6 +165,8 @@ def ex11(list_tuples):
 
     listSorted = sorted(list_tuples, key=lambda element: element[1][2])
     return listSorted
+def ex12(group_by_rhyme):
+    return [[x,y] for x in group_by_rhyme for y in group_by_rhyme if( x[:2]==y[len(y)-3:])]
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0
@@ -198,6 +200,8 @@ if __name__ == '__main__':
             ex10([1,2,3], [5,6,7], ["a", "b", "c","D"])
         elif exercitiu==11:
             print(ex11([('abc', 'bcd'), ('abc', 'zza')]))
+        elif  exercitiu==12:
+            print(ex12(['ana', 'banana', 'carte', 'arme', 'parte']))
 
 
 
