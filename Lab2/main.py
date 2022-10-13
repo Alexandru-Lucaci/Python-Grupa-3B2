@@ -59,21 +59,37 @@ def ex3(listA, listB):
     BminusA.sort()
     return (AReunitB, AintersectatB, AminusB, BminusA)
 
+def ex4(listSounds, listOrder, poz):
+
+    print(listSounds[poz])
+    music=[]
+    for index in listOrder:
+        poz+=index
+        if(poz>=len(listSounds)):
+            poz=poz%len(listSounds)
+            music+=listSounds[poz]
+            print(listSounds[poz])
+        else:
+            music += listSounds[poz]
+            print(listSounds[poz])
+
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0
     while exercitiu!=-99 :
         exercitiu = int(input("Alege un exercitiu"))
-
         if exercitiu==1:
             number = int(input("numar >"))
             print(fib(number))
         elif exercitiu==2:
             print(ex2([1,2,3,4,5,6,7,8]))
         elif exercitiu==3:
-
             print(ex3([2,4,5,6],[1,3,5,7]))
+        elif exercitiu==4:
+            ex4(["do", "re", "mi", "fa", "sol"], [1, -3, 4, 2], 2)
+        else:
+            print('done')
 
 
 
