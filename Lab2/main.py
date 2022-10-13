@@ -160,6 +160,11 @@ def ex11(list_tuples):
     if(len(list_tuples[1][1])<3):
         print(len(list_tuples[1]))
         return None
+    for i in list_tuples:
+        if (len(i[1]) < 3):
+            print(len(list_tuples[1]))
+            return None
+
     listSorted = sorted(list_tuples, key=lambda element: element[1][2])
     return listSorted
 if __name__ == '__main__':
