@@ -155,6 +155,13 @@ def ex10(*list):
                 result.append(None)
         returnList.append(result)
     print(returnList)
+
+def ex11(list_tuples):
+    if(len(list_tuples[1][1])<3):
+        print(len(list_tuples[1]))
+        return None
+    listSorted = sorted(list_tuples, key=lambda element: element[1][2])
+    return listSorted
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0
@@ -186,7 +193,8 @@ if __name__ == '__main__':
                         [6, 6, 7, 6, 7, 5]] ))
         elif exercitiu==10:
             ex10([1,2,3], [5,6,7], ["a", "b", "c","D"])
-
+        elif exercitiu==11:
+            print(ex11([('abc', 'bcd'), ('abc', 'zza')]))
 
 
 
