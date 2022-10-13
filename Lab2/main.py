@@ -119,15 +119,18 @@ def ex7(list_of_numbers):
 
 def divideBy(string,x=2, flag=False):
     if flag==True:
-        return list(filter(lambda element: ord(element)/x ==0, string))
+        return list(filter(lambda element: ord(element)%x ==0, string))
+    return list(filter(lambda element: ord(element) % x != 0, string))
 
 
+# print(divideBy("test",2,False))
 def ex8(list_of_string,x=2,flag = False):
     result =[]
-    if flag==True:
-        # All the chars that have the ASCII code divisible with x
-        for i in list_of_string:
-            currentList =[]
+    for i in list_of_string:
+        result.append(divideBy(i,x,flag))
+
+    return result
+
 
 
 
@@ -154,7 +157,9 @@ if __name__ == '__main__':
             (rez1,rez2)=ex7([11211,2,3])
             print(rez1,"si",rez2)
         elif exercitiu==8:
-            ex8(2,["test","hello","lab002"])
+            print(ex8(["test","hello","lab002"],2,True))
+
+
 
 
 
