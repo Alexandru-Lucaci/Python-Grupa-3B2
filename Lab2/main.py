@@ -136,9 +136,10 @@ def ex9(matrix):
     rowNum = len(matrix)
     columnNum = len(matrix[0])
     for i in range (0,columnNum):
-        for j in  (1,rowNum):
-            if matrix[j][i] + 1> matrix[j][i]:
-                result.append([j,i])
+        for j in range (1,rowNum):
+            if matrix[j-1][i] >= matrix[j][i]:
+                result.append((j,i))
+                break
     print(result)
 
 
