@@ -73,6 +73,7 @@ def ex4(listSounds, listOrder, poz):
             music += listSounds[poz]
             print(listSounds[poz])
 
+    return music
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
