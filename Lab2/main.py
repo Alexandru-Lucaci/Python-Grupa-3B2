@@ -44,9 +44,21 @@ def ex3(listA, listB):
     for var in listB:
         if AReunitB.count(var) == 0:
             AReunitB.append(var)
-    # print(AReunitB)
 
-# print(ex3([2,4,5,6],[1,3,5,7]))
+    for var in listA:
+        if var not in listB:
+            AminusB.append(var)
+
+    for var in listB:
+        if var not in listA:
+            BminusA.append(var)
+
+    AReunitB.sort()
+    AintersectatB.sort()
+    AminusB.sort()
+    BminusA.sort()
+    return (AReunitB, AintersectatB, AminusB, BminusA)
+
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
@@ -59,7 +71,9 @@ if __name__ == '__main__':
             print(fib(number))
         elif exercitiu==2:
             print(ex2([1,2,3,4,5,6,7,8]))
-        else:
-            print("done")
+        elif exercitiu==3:
+
+            print(ex3([2,4,5,6],[1,3,5,7]))
+
 
 
