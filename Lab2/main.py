@@ -16,7 +16,16 @@ def fib(number):
         lista.append(lista[len(lista)-1]+lista[len(lista)-2])
     return lista
 
+def isPrime(number):
+    if number%2==0 :
+        return False
+    sq = number**0.5+1
+    for index in range(3,int(sq),2):
+        if number%index == 0:
+            return False
+    return True
 
+print(isPrime(11))
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0
