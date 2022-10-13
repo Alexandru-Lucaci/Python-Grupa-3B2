@@ -74,6 +74,16 @@ def ex4(listSounds, listOrder, poz):
             print(listSounds[poz])
 
     return music
+def ex5(matrix):
+    # 00 01 02
+    # 10 11 12
+    # 20 21 22
+    # newMat =[]
+    for i in range(0,len(matrix)):
+        for j in range (0,len(matrix[0])):
+            if i>j :
+                matrix[i][j]=0;
+    return matrix
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
@@ -89,8 +99,10 @@ if __name__ == '__main__':
             print(ex3([2,4,5,6],[1,3,5,7]))
         elif exercitiu==4:
             ex4(["do", "re", "mi", "fa", "sol"], [1, -3, 4, 2], 2)
-        else:
-            print('done')
+        elif exercitiu==5:
+            a=[[1,2,3], [2,3,4],[4,5,6]]
+            print(ex5(a))
+
 
 
 
