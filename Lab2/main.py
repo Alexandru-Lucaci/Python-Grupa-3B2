@@ -32,6 +32,21 @@ def ex2(list):
         if(isPrime(i)):
             returnedList+= i
     return returnedList
+def ex3(listA, listB):
+    AReunitB =[]
+    AintersectatB =[]
+    AminusB=[]
+    BminusA =[]
+    for var in listA:
+        if listB.count(var) > 0:
+            AintersectatB.append(var)
+        AReunitB.append(var)
+    for var in listB:
+        if AReunitB.count(var) == 0:
+            AReunitB.append(var)
+    # print(AReunitB)
+
+# print(ex3([2,4,5,6],[1,3,5,7]))
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
