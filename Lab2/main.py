@@ -98,7 +98,23 @@ def ex6(*list, x):
             newList.remove(i)
     # print(returnList)
     return returnList
+def isPalindrom(x):
+    copy = x;
+    number = 0;
+    while(copy>0):
+        # print(copy)
+        number = number*10+copy%10
+        copy//=10
 
+    print(x," si ", number)
+    if(number==x):
+        return True
+    else:
+        return False
+def ex7(list_of_numbers):
+    # print(type(list_of_numbers)
+    list_of_numbers= list(filter(lambda element: isPalindrom(element),list_of_numbers))
+    print(list_of_numbers)
 
 if __name__ == '__main__':
     # print_hi('PyCharm')
@@ -119,6 +135,8 @@ if __name__ == '__main__':
             print(ex5(a))
         elif exercitiu==6:
             print(ex6([1,2,3],[2,3,4],[4,5,6],x=2))
+        elif exercitiu==7:
+            ex7([11211,2,3])
 
 
 
