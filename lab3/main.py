@@ -70,7 +70,7 @@ if __name__ == '__main__':
         elif exercitiu == 3:
             ex3()
         elif exercitiu == 4:
-            ex4()
+            print(ex4("a", "saluuut", href="http://python.org", _class="my-link", id="someid"))
         elif exercitiu == 5:
             ex5()
         elif exercitiu == 6:
