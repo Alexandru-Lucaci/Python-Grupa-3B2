@@ -55,8 +55,11 @@ def ex6(listA):
     b = len(listA)-a
     return (a,b)
 
-def ex7():
-    print("ex")
+def ex7(*sets):
+    listUnion = []
+    for set in sets:
+        listUnion += set
+    print(listUnion)
 def ex8():
     print("ex")
 def ex9():
@@ -84,7 +87,7 @@ if __name__ == '__main__':
             (a,b) = ex6([1,2,3,4,5,6,5,5,6,2])
             print("Elemente unice=",a,"Elemente duplicte=",b)
         elif exercitiu == 7:
-            ex7()
+            ex7({1,2},{3,4},{5,6})
         elif exercitiu == 8:
             ex8()
         elif exercitiu == 9:
