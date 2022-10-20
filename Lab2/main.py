@@ -168,7 +168,7 @@ def ex11(list_tuples):
 def ex12(group_by_rhyme):
     for x in group_by_rhyme:
         print (x[:2], "si", x[-2:])
-    return [[x,y] for x in group_by_rhyme for y in group_by_rhyme if( x!= y and x[0]==y[-1] )]
+    return [[x,y] for x in group_by_rhyme for y in group_by_rhyme if( x!= y and x[-1]==y[-1] and x[-2]==y[-2]  )]
 if __name__ == '__main__':
     # print_hi('PyCharm')
     exercitiu = 0

@@ -1,8 +1,7 @@
 
 
-def ex1():
-    a={2,4,6,8,9,10,11}
-    b={1,2,3,4,5,7,9,10,11}
+def ex1( a,b):
+
     aUnionB = a.union(b)
     aIntersectionB = a.intersection(b)
     aDifferenceB = a.difference(b)
@@ -56,16 +55,49 @@ def ex6(listA):
     return (a,b)
 
 def ex7(*sets):
-    listUnion = []
-    for set in sets:
-        listUnion += set
-    print(listUnion)
-def ex8():
-    print("ex")
+    # listUnion = []
+    dictionary = {}
+    opList =["|","&","-"]
+    firstSet = sets[0]
+    for index1,set1 in enumerate(sets):
+        firstSet = sets[index1]
+        for index,set in enumerate (sets):
+            if index != index1:
+                for i in range(0,len(opList)):
+                    text = str(firstSet) + str(opList[i]) + str(set)
+                    print(text);
+                    (aUnionB, aIntersectionB, aDifferenceB, bDifferenceA)= ex1(firstSet, set)
+                    if i == 0:
+                        dictionary[text] = aUnionB
+                    elif i == 1:
+                        dictionary[text] = aIntersectionB
+                    elif i == 2:
+                        dictionary[text] = aDifferenceB
+                        # text = str(set) + str(opList[i]) + str(firstSet)
+                        # dictionary[text] = bDifferenceA
+                        # print(text)
+
+    # firstSet=sets[index]
+    return dictionary
+def ex8(dictionary):
+    currentKey="start"
+    list=[]
+    while(True):
+        if(currentKey==dictionary[currentKey]):
+            return list
+
+        list+=dictionary[currentKey]
+
+        currentKey = dictionary[currentKey]
+        if list.count(currentKey) >2:
+            return list
+
+
+
+
 def ex9():
     print("ex")
-def ex10():
-    print("ex")
+
 
 
 if __name__ == '__main__':
@@ -73,7 +105,9 @@ if __name__ == '__main__':
     while exercitiu != -99:
         exercitiu = int(input("Alege un exercitiu"))
         if exercitiu == 1:
-            ex1()
+            a = {2, 4, 6, 8, 9, 10, 11}
+            b = {1, 2, 3, 4, 5, 7, 9, 10, 11}
+            ex1(a,b)
         elif exercitiu == 2:
             string = input("Introduceti un string")
             ex2(string)
@@ -87,12 +121,12 @@ if __name__ == '__main__':
             (a,b) = ex6([1,2,3,4,5,6,5,5,6,2])
             print("Elemente unice=",a,"Elemente duplicte=",b)
         elif exercitiu == 7:
-            ex7({1,2},{3,4},{5,6})
+            print(ex7({1,2},{3,4},{5,6}))
         elif exercitiu == 8:
-            ex8()
+            print(ex8({'start': 'a', 'b': 'a', 'a': '6', '6': 'z', 'x': '2', 'z': '2', '2': '2', 'y': 'start'}))
+
         elif exercitiu == 9:
             ex9()
-        elif exercitiu == 10:
-            ex10()
+
         else:
             break
