@@ -37,7 +37,12 @@ def ex3(dictionar1, dictionar2):
 
 
 
-:
+def ex4(tag, content, **parameters):
+    tagCreation = "<" + tag
+    for key, value in parameters.items():
+        tagCreation += " " + key + "=\"" + value + "\""
+    tagCreation += ">" + content + "</" + tag + ">"
+    return tagCreation
 
 def ex5():
     print("ex")
