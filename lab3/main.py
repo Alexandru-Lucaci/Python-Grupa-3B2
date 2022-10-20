@@ -33,8 +33,9 @@ def ex3(dictionar1, dictionar2):
      # return len(dictionar1) == len(dictionar2) and all([dictionar1[key] == dictionar2[key] for key in dictionar1])
     return False
 
-
-
+a=(1,1)
+dictionar = {1:22}
+print(dictionar)
 
 
 def ex4(tag, content, **parameters):
@@ -46,8 +47,14 @@ def ex4(tag, content, **parameters):
 
 def ex5():
     print("ex")
-def ex6():
-    print("ex")
+#     idk yet
+def ex6(listA):
+    setA = set(listA)
+    # setB = set(listB)
+    a =len(setA)
+    b = len(listA)-a
+    return (a,b)
+
 def ex7():
     print("ex")
 def ex8():
@@ -74,7 +81,8 @@ if __name__ == '__main__':
         elif exercitiu == 5:
             ex5()
         elif exercitiu == 6:
-            ex6()
+            (a,b) = ex6([1,2,3,4,5,6,5,5,6,2])
+            print("Elemente unice=",a,"Elemente duplicte=",b)
         elif exercitiu == 7:
             ex7()
         elif exercitiu == 8:
