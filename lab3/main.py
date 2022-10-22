@@ -95,7 +95,8 @@ def ex8(dictionary):
 
 
 
-def ex9():
+def ex9(set, **parameters):
+    
     print("ex")
 
 
