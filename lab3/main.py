@@ -32,9 +32,9 @@ def ex3(dictionar1, dictionar2):
      # return len(dictionar1) == len(dictionar2) and all([dictionar1[key] == dictionar2[key] for key in dictionar1])
     return False
 
-a=(1,1)
-dictionar = {1:22}
-print(dictionar)
+# a=(1,1)
+# dictionar = {1:22}
+# print(dictionar)
 
 
 def ex4(tag, content, **parameters):
@@ -95,10 +95,18 @@ def ex8(dictionary):
 
 
 
-def ex9(set, **parameters):
-    
-    print("ex")
-
+def ex9(*elements, **parameters):
+    count = 0
+    set_elements = set(elements)
+    # print(set_elements)
+    # print(parameters.count(set_elements))
+    # print(parameters.items())
+    for key in parameters:
+        if parameters[key] in set_elements:
+            count += 1
+    return count
+    # echivalent cred cu asta
+    return len([el for el in elements if el in parameters.values()])
 
 
 if __name__ == '__main__':
@@ -127,7 +135,7 @@ if __name__ == '__main__':
             print(ex8({'start': 'a', 'b': 'a', 'a': '6', '6': 'z', 'x': '2', 'z': '2', '2': '2', 'y': 'start'}))
 
         elif exercitiu == 9:
-            ex9()
+            print(ex9(1,2,3,4,x=1,y=2,z=3,w=5))
 
         else:
             break
