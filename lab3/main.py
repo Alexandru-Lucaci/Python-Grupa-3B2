@@ -89,7 +89,7 @@ def ex8(dictionary):
         list+=dictionary[currentKey]
 
         currentKey = dictionary[currentKey]
-        if list.count(currentKey) >2:
+        if list.count(currentKey) >1:
             return list
 
 
