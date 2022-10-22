@@ -19,22 +19,19 @@ def ex2(stringwithProp):
                 letterDictionary[letter] = 1
 
     print(letterDictionary)
-def ex3(dictionar1, dictionar2):
-    dictionar1 = dictionar1.copy()
-    dictionar2 = dictionar2.copy()
-    for key in dictionar1:
-        if key in dictionar2:
-            if dictionar1[key] == dictionar2[key]:
-                dictionar1.pop(key)
-                dictionar2.pop(key)
-    if len(dictionar1) == 0 and len(dictionar2) == 0:
-        return True
-     # return len(dictionar1) == len(dictionar2) and all([dictionar1[key] == dictionar2[key] for key in dictionar1])
-    return False
 
-# a=(1,1)
-# dictionar = {1:22}
-# print(dictionar)
+def recursivityEx3(item):
+    final=[]
+    if type(item) is dict:
+        for key in item:
+            final+=recursivityEx3(item[key])
+    else:
+        for i in item:
+            final+= recursivityEx3(i)
+    return final
+
+def ex3(dictionar1, dictionar2):
+    return list(set(recursivityEx3(dictionar1)) ^ set(recursivityEx3(dictionar2)))
 
 
 def ex4(tag, content, **parameters):
