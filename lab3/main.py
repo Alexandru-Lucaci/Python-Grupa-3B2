@@ -118,7 +118,9 @@ if __name__ == '__main__':
             string = input("Introduceti un string")
             ex2(string)
         elif exercitiu == 3:
-            ex3()
+            dict1={1:2,3:4,5:6}
+            dict2={1:2,3:4,5:6}
+            ex3(dict1,dict2)
         elif exercitiu == 4:
             print(ex4("a", "saluuut", href="http://python.org", _class="my-link", id="someid"))
         elif exercitiu == 5:
