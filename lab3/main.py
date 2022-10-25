@@ -78,7 +78,7 @@ def validate_dict(tupleSet, dictionary):
 
 print(validate_dict([("key1", "","inside",""), ("key2", "start", "middle", "winter")], {"key1": "come inside, it's too cold out", "key2": "start this middle is not valid winter"}))
 def ex5(tupleSet, dictionary):
-    validate_dict(tupleSet, dictionary)
+    return validate_dict(tupleSet, dictionary)
 #     idk yet
 def ex6(listA):
     setA = set(listA)
@@ -160,7 +160,8 @@ if __name__ == '__main__':
         elif exercitiu == 4:
             print(ex4("a", "saluuut", href="http://python.org", _class="my-link", id="someid"))
         elif exercitiu == 5:
-            ex5()
+            print(ex5([("key1", "","inside",""), ("key2", "start", "middle", "winter")], {"key1": "come inside, it's too cold out", "key2": "start this middle is not valid winter"}))
+
         elif exercitiu == 6:
             (a,b) = ex6([1,2,3,4,5,6,5,5,6,2])
             print("Elemente unice=",a,"Elemente duplicte=",b)
