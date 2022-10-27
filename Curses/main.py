@@ -380,6 +380,7 @@ def modules():
 # os.path.commonpath(<path1>, <path2>, <path3>, ...) -> returneaza calea comuna din toate argumentele
 # os.path.normpath(<path>) -> returneaza o cale normalizata
 # os.path.normcase(<path>) -> returneaza o cale cu litere mici
+#
     import os
     print(os.path.join("C:","Windows","System32","drivers","etc","hosts"))
     print(os.path.dirname("C:WindowsSystem32driversetchosts")) #returneaza numele folderului
