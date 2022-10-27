@@ -86,9 +86,14 @@ def ex3(my_path):
 #     todo 4)	Să se scrie o funcție ce returnează o listă cu extensiile unice a fișierelor din directorul dat ca argument la linia de comandă (nerecursiv). Lista trebuie să fie sortată crescător.
 #     todo Mențiune: extensia fișierului ‘fisier.txt’ este ‘txt’, iar ‘fisier’ nu are extensie, deci nu va apărea în lista finală.
 def ex4():
-    if len(sys.argv) > 1:
-        print("idk yet")
-    print("ex")
+    if len(sys.argv) < 1:
+        raise Exception("Not enough arguments")
+    final_list = []
+    for el in sys.argv:
+        if(el!= sys.argv[0]):
+            if os.path.splitext(el)[1] != "":
+                final_list.append(el)
+    return final_list
 def ex5(target, to_search):
     boolean = False
     if os.path.isfile(target):
@@ -170,8 +175,8 @@ if __name__ == '__main__':
             print(ex3("D:\Python-Grupa-3B2\lab4"))
 
         elif exercitiu == 4:
-            print(sys.argv[1])
-            ex4()
+            # print(sys.argv[1])
+            print(ex4())
         elif exercitiu == 5:
             print(ex5("D:\Python-Grupa-3B2\lab4\Files\ex2.txt", "a"))
         elif exercitiu == 6:
