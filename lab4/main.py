@@ -144,8 +144,14 @@ def ex7(path_String):
     else:
         raise  Exception("Path does not exist")
     print("ex")
-def ex8():
-    print("ex")
+def ex8(dir_path):
+    list_of_files = []
+    files = os.listdir(dir_path)
+    for file in files:
+        if os.path.isfile(os.path.join(dir_path, file)):
+            print(os.path.join(dir_path, file))
+            list_of_files.append(os.path.abspath(os.path.join(dir_path, file)))
+    return list_of_files
 def ex9():
     print("ex")
 def ex10():
@@ -173,7 +179,7 @@ if __name__ == '__main__':
         elif exercitiu == 7:
             print(ex7("D:\Python-Grupa-3B2\lab4\Files\ex2.txt"))
         elif exercitiu == 8:
-            ex8()
+            print(ex8("D:\Python-Grupa-3B2\lab4\Files"))
         elif exercitiu == 9:
             ex9()
         elif exercitiu == 10:
