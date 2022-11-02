@@ -126,7 +126,6 @@ def ex6(target, to_search, call_back_function):
     if boolean:
         return True
     else:
-
         call_back_function(Exception("ValueError"))
 
 def callBackFunction(exception):
