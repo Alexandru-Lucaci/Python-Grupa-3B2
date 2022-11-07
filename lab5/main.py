@@ -29,9 +29,9 @@ def ex3Filter(string):
 
 ex3ListLambda = lambda string: [element for element in string if element in ['a', 'e', 'i', 'o', 'u']]
 
-print(type("test"))
-if(type("test") == str):
-    print("test")
+# print(type("test"))
+# if(type("test") == str):
+#     print("test")
 
 def ex4(*listItems, **dictItems):
 #    iterate listitems and return only the dictionaries
@@ -60,6 +60,18 @@ def ex4(*listItems, **dictItems):
                         break
     # print( returnList)
     print(returnList)
+
+
+# ex5
+# print(type({4, 5}))
+# check if an input is a number
+def isNumber(x):
+    try:
+        float(x)
+        return True
+    except ValueError:
+        return False
+
 
 if __name__ == '__main__':
     inputul = int(input(" element : "))
