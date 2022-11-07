@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1f277ab-edd2-452c-bcd4-152df106415c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/lab5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/Python-Grupa-3B2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/Python-Grupa-3B2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab4/Files/ex2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/Files/ex2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +99,7 @@
       <updated>1667480625126</updated>
       <workItem from="1667480634872" duration="178000" />
       <workItem from="1667480815356" duration="718000" />
-      <workItem from="1667481582931" duration="2482000" />
+      <workItem from="1667481582931" duration="3603000" />
     </task>
     <servers />
   </component>
