@@ -29,6 +29,38 @@ def ex3Filter(string):
 
 ex3ListLambda = lambda string: [element for element in string if element in ['a', 'e', 'i', 'o', 'u']]
 
+print(type("test"))
+if(type("test") == str):
+    print("test")
+
+def ex4(*listItems, **dictItems):
+#    iterate listitems and return only the dictionaries
+    returnList = []
+    # for i in listItems:
+    #     if type(i) == dict:
+    #         if len(i.values()) >=2:
+    #             for j in i.values():
+    #                 if type(j) == str and len(j) >= 3:
+    #                     returnList.append(i)
+    #                     break
+    for i in listItems:
+        if type(i) == dict:
+            if len(i.values()) >= 2:
+                for j in i.keys():
+                    if type(j) == str and len(j) >= 3:
+                        returnList.append(i)
+                        break
+
+    for i in dictItems.values():
+        if type(i) == dict:
+            if len(i.values()) >=2:
+                for j in i.keys():
+                    if type(j) == str and len(j)>=3:
+                        returnList.append(i)
+                        break
+    # print( returnList)
+    print(returnList)
+
 if __name__ == '__main__':
     inputul = int(input(" element : "))
     while inputul != 0:
@@ -38,5 +70,7 @@ if __name__ == '__main__':
             print(ex3("salut ce faci"))
             print(ex3Filter("salut ce faci"))
             print(ex3ListLambda("salut ce faci"))
+        elif inputul==4:
+            ex4( {"input" : 1}, {'a': 5, 'b': 7, 'aac': 'eeee'}, {2: 3}, [1, 2, 3], {'abc': 4, 'def': "1"}, 3764, dictionar={'ab': 4, 'ac': 'abcde', 'fg': 'abc'}, test={1: 1, 'test': True})
         inputul = int(input(" element : "))
 
