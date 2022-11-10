@@ -162,14 +162,18 @@ augmented_multiply_by_two = print_arguments(multiply_by_two)
 augmented_add_numbers = print_arguments(add_numbers)
 augmented_multiply_by_three = multiply_output(multiply_by_three)
 decorated_function = augmented_function(add_numbers, [print_arguments, multiply_output])
-print(decorated_function(3, 4))
+# print(decorated_function(3, 4))
 
 def ex8(*args):
     print(augmented_multiply_by_two(2))
     print(augmented_add_numbers(2, 3))
     print(augmented_multiply_by_three(10))
 
-
+def ex9(*args):
+    returnList = []
+    for i in args:
+        returnList.append({'sum': i[0] + i[1], 'prod': i[0] * i[1], 'pow': i[0] ** i[1]})
+    return returnList
 def sum_digits(x):
     return sum(map(int, str(x)))
 
@@ -195,4 +199,6 @@ if __name__ == '__main__':
                           limit=2, offset=2))
         elif inputul == 8:
             ex8()
+        elif inputul==9:
+            print(ex9((1,2),(3,4),(5,6)))
         inputul = int(input(" element : "))
