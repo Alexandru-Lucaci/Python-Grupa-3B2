@@ -62,6 +62,7 @@ def ex4(*listItems, **dictItems):
     # print( returnList)
     print(returnList)
 
+
 # print(type([1,2,3]))
 def ex5(*listItems):
     returnList = []
@@ -79,6 +80,7 @@ def ex5(*listItems):
             returnList.append(i)
     return set(returnList)
 
+
 def ex6(listNumbers):
     evenList = list(filter(lambda element: element % 2 == 0, listNumbers))
     oddList = list(filter(lambda element: element % 2 == 1, listNumbers))
@@ -87,9 +89,10 @@ def ex6(listNumbers):
         returnList.append((evenList[i], oddList[i]))
     return returnList
 
+
 def isNumber(x):
     try:
-        if(type(x)== str):
+        if (type(x) == str):
             return False
         float(x)
         return True
@@ -97,6 +100,7 @@ def isNumber(x):
         return False
     except TypeError:
         return False
+
 
 # Write a function called process that receives a variable number of keyword arguments
 #
@@ -116,7 +120,6 @@ def process(**kwargs):
         fib.append(fib[i - 1] + fib[i - 2])
     if 'filters' in kwargs:
         for i in kwargs['filters']:
-
             fib = list(filter(i, fib))
             # print(fib)
         # fib = list(filter(lambda element: kwargs['filters'](element), fib))
@@ -128,9 +131,49 @@ def process(**kwargs):
         fib = fib[:kwargs['limit']]
 
     return fib
-def sum_digits(x):
 
+
+def multiply_by_two(x):
+    return x * 2
+
+
+def multiply_by_three(x):
+    return x * 3
+
+
+def add_numbers(a, b):
+    return a + b
+
+
+def print_arguments(function):
+    return function
+
+def augmented_function(function, list_of_decorators):
+
+    for i in list_of_decorators:
+        function = i(function)
+    return function
+
+def multiply_output(function):
+    return lambda x: function(x) + function(x)
+
+
+augmented_multiply_by_two = print_arguments(multiply_by_two)
+augmented_add_numbers = print_arguments(add_numbers)
+augmented_multiply_by_three = multiply_output(multiply_by_three)
+decorated_function = augmented_function(add_numbers, [print_arguments, multiply_output])
+print(decorated_function(3, 4))
+
+def ex8(*args):
+    print(augmented_multiply_by_two(2))
+    print(augmented_add_numbers(2, 3))
+    print(augmented_multiply_by_three(10))
+
+
+def sum_digits(x):
     return sum(map(int, str(x)))
+
+
 if __name__ == '__main__':
     inputul = int(input(" element : "))
     while inputul != 0:
@@ -148,5 +191,8 @@ if __name__ == '__main__':
         elif inputul == 6:
             print(ex6([1, 3, 5, 2, 8, 7, 4, 10, 9, 2]))
         elif inputul == 7:
-            print(process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20], limit=2, offset=2))
+            print(process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20],
+                          limit=2, offset=2))
+        elif inputul == 8:
+            ex8()
         inputul = int(input(" element : "))
