@@ -1,4 +1,6 @@
 # import utils
+import inspect
+import collections
 
 sumOfNums = lambda *y, **x: sum(x.values())
 
@@ -102,18 +104,6 @@ def isNumber(x):
         return False
 
 
-# Write a function called process that receives a variable number of keyword arguments
-#
-# The function generates the first 1000 numbers of the Fibonacci sequence and then processes them in the following way:
-#
-# If the function receives a parameter called filters, this will be a list of predicates (function receiving an argument and returning True/False) and will retain from the generated numbers only those for which the predicates are True.
-#
-# If the function receives a parameter called limit, it will return only that amount of numbers from the sequence.
-#
-# If the function receives a parameter called offset, it will skip that number of entries from the beginning of the result list.
-#
-# The function will return the processed numbers.
-
 def process(**kwargs):
     fib = [0, 1]
     for i in range(2, 1000):
@@ -145,35 +135,59 @@ def add_numbers(a, b):
     return a + b
 
 
+# def print_arguments(function):
+#     # print(function().keys())
+#     # print the arguments of the function
+#     # print(function.args)
+#     # print(var)
+#     print(inspect.signature(function))
+#     # print(locals())
+#     # return var
+#     return function
+#
 def print_arguments(function):
-    return function
+    def someFunction(*args, **kwargs):
+        print(args, kwargs)
+        return function(*args, **kwargs)
+
+    return someFunction
+
 
 def augmented_function(function, list_of_decorators):
-
     for i in list_of_decorators:
         function = i(function)
     return function
 
-def multiply_output(function):
-    return lambda x: function(x) + function(x)
 
+# def multiply_output(function):
+#     return lambda x: function(x) + function(x)
+def multiply_output(function):
+    def f(*args,**kwargs):
+        return 2*function(*args,**kwargs)
+    return f
 
 augmented_multiply_by_two = print_arguments(multiply_by_two)
 augmented_add_numbers = print_arguments(add_numbers)
 augmented_multiply_by_three = multiply_output(multiply_by_three)
 decorated_function = augmented_function(add_numbers, [print_arguments, multiply_output])
-# print(decorated_function(3, 4))
+print(decorated_function(3, 4))
+print(augmented_multiply_by_two(2))
+
 
 def ex8(*args):
     print(augmented_multiply_by_two(2))
     print(augmented_add_numbers(2, 3))
     print(augmented_multiply_by_three(10))
 
-def ex9(*args):
+
+def ex9(**args):
     returnList = []
-    for i in args:
-        returnList.append({'sum': i[0] + i[1], 'prod': i[0] * i[1], 'pow': i[0] ** i[1]})
+    if 'pairs' in args:
+        for i in args['pairs']:
+            returnList.append({'sum': i[0] + i[1], 'prod': i[0] * i[1], 'pow': i[0] ** i[1]})
     return returnList
+
+
 def sum_digits(x):
     return sum(map(int, str(x)))
 
@@ -199,6 +213,6 @@ if __name__ == '__main__':
                           limit=2, offset=2))
         elif inputul == 8:
             ex8()
-        elif inputul==9:
-            print(ex9((1,2),(3,4),(5,6)))
+        elif inputul == 9:
+            print(ex9(pairs=[(1, 2), (3, 4), (5, 6)]))
         inputul = int(input(" element : "))
