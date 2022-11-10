@@ -98,7 +98,39 @@ def isNumber(x):
     except TypeError:
         return False
 
+# Write a function called process that receives a variable number of keyword arguments
+#
+# The function generates the first 1000 numbers of the Fibonacci sequence and then processes them in the following way:
+#
+# If the function receives a parameter called filters, this will be a list of predicates (function receiving an argument and returning True/False) and will retain from the generated numbers only those for which the predicates are True.
+#
+# If the function receives a parameter called limit, it will return only that amount of numbers from the sequence.
+#
+# If the function receives a parameter called offset, it will skip that number of entries from the beginning of the result list.
+#
+# The function will return the processed numbers.
 
+def process(**kwargs):
+    fib = [0, 1]
+    for i in range(2, 1000):
+        fib.append(fib[i - 1] + fib[i - 2])
+    if 'filters' in kwargs:
+        for i in kwargs['filters']:
+
+            fib = list(filter(i, fib))
+            # print(fib)
+        # fib = list(filter(lambda element: kwargs['filters'](element), fib))
+    print(fib)
+    if 'offset' in kwargs:
+        fib = fib[kwargs['offset']:]
+    print(fib)
+    if 'limit' in kwargs:
+        fib = fib[:kwargs['limit']]
+
+    return fib
+def sum_digits(x):
+
+    return sum(map(int, str(x)))
 if __name__ == '__main__':
     inputul = int(input(" element : "))
     while inputul != 0:
@@ -115,4 +147,6 @@ if __name__ == '__main__':
             print(ex5([1, "2", {"3": "a"}, {4, 5}, 5, 6, 3.0]))
         elif inputul == 6:
             print(ex6([1, 3, 5, 2, 8, 7, 4, 10, 9, 2]))
+        elif inputul == 7:
+            print(process(filters=[lambda item: item % 2 == 0, lambda item: item == 2 or 4 <= sum_digits(item) <= 20], limit=2, offset=2))
         inputul = int(input(" element : "))
