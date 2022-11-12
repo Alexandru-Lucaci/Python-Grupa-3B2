@@ -53,7 +53,7 @@ def stringTypes():
     print(s.isdigit())
     print(s.islower())
     print(s.isupper())
-# stringTypes()
+stringTypes()
 
 
 def buitInFunctionString():
