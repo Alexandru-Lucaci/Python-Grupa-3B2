@@ -144,7 +144,7 @@ def ex8(directory, regular_expressions):
             boolean_and_text = True
             for i in regular_expressions:
                 if re.match(i, file) :
-                    print(file)
+                    # print(file)
                     f = open(os.path.join(directory,file), "r")
                     text = f.read()
                     if re.match(i, text):
@@ -152,9 +152,9 @@ def ex8(directory, regular_expressions):
 
                         # print('>>'+file)
                     else:
+                        boolean_just_the_name = True
                         boolean_and_text = True
-                        boolean_and_text = True
-                        print(file)
+                        # print(file)
             if boolean_and_text:
                 print('>>'+file)
             else:
