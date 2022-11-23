@@ -130,7 +130,20 @@ def ex7(string_text):
                 raise Exception('Cod invalid')
         raise Exception('Numai mai mic decat 13 cifre')
 
+def ex8(directory, regular_expressions):
+    import os
+    import re
+    if not os.path.exists(directory):
+        raise Exception('Directory not found')
+    if not os.path.isdir(directory):
+        raise Exception('Not a directory')
 
+    for file in os.listdir(directory):
+        if os.path.isfile(os.path.join(directory,file)):
+            for i in regular_expressions:
+                if re.match(i, file):
+                    print(file)
+ex8('D:\\javascript\\tutorial', r'.*\.txt$')
 if __name__ == '__main__':
     print(ex1('Ana are 12 3     s      mere'))
     try:
