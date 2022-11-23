@@ -140,10 +140,31 @@ def ex8(directory, regular_expressions):
 
     for file in os.listdir(directory):
         if os.path.isfile(os.path.join(directory,file)):
+            boolean_just_the_name = False
+            boolean_and_text = True
             for i in regular_expressions:
-                if re.match(i, file):
+                if re.match(i, file) :
                     print(file)
-ex8('D:\\javascript\\tutorial', r'.*\.txt$')
+                    f = open(os.path.join(directory,file), "r")
+                    text = f.read()
+                    if re.match(i, text):
+                        boolean_and_text = True
+
+                        # print('>>'+file)
+                    else:
+                        boolean_and_text = True
+                        boolean_and_text = True
+                        print(file)
+            if boolean_and_text:
+                print('>>'+file)
+            else:
+                if boolean_just_the_name:
+                    print(file)
+
+        # else:
+            # ex8(os.path.join(directory,file),regular_expressions)
+            # raise Exception(f'{file} Not a file')
+ex8('D:\\javascript\\tutorial', [r'.*\.txt$', r'.*\.js$', r'.*\.html$'])
 if __name__ == '__main__':
     print(ex1('Ana are 12 3     s      mere'))
     try:
