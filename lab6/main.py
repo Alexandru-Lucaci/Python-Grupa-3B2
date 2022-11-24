@@ -141,19 +141,24 @@ def ex8(directory, regular_expressions):
     for file in os.listdir(directory):
         if os.path.isfile(os.path.join(directory,file)):
             boolean_just_the_name = False
-            boolean_and_text = True
+            boolean_and_text = False
             for i in regular_expressions:
                 if re.match(i, file) :
+                    print('matched 0')
                     # print(file)
                     f = open(os.path.join(directory,file), "r")
                     text = f.read()
+                    print(text)
+                    f.close()
+                    print(i)
                     if re.match(i, text):
+                        print ('matched')
                         boolean_and_text = True
-
+                        boolean_just_the_name = True
                         # print('>>'+file)
                     else:
                         boolean_just_the_name = True
-                        boolean_and_text = True
+
                         # print(file)
             if boolean_and_text:
                 print('>>'+file)
