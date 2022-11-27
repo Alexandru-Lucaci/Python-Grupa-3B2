@@ -14,9 +14,8 @@ def ex1(string_words):
 
 def ex1RE(string_words):
     import re
-    return re.findall(r'\w+', string_words)
+    return re.findall(r'[a-zA-Z0-9]+', string_words)
 def ex2(regex_string,text_string,x):
-    # and returns those long-length x substrings that match the regular expression
     import re
     list_words = []
     for match in re.finditer(regex_string, text_string):
@@ -85,7 +84,7 @@ def ex6(text_param):
     text_param = text_param.split(' ')
 
     for word in text_param:
-        # word finished with a letter
+
         punctuation = ''
         if not re.match(r'(.*)\w$', word):
             # daca am cumva un semn de punctuatie la final
